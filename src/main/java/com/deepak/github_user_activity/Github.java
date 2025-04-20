@@ -55,6 +55,10 @@ public class Github {
     }
 
     public void printGithubActivities(List<GithubActivity> githubActivities) {
+        if(githubActivities.isEmpty()) {
+            System.out.println("The given username or github id is not valid");
+            return;
+        }
         System.out.println("Output : ");
         githubActivities.forEach(githubActivity -> {
             System.out.println(githubActivity.getCount() + " " + githubActivity.getType() + " in the repo " + githubActivity.getRepo());
